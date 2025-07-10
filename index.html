@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Win a $100 Amazon Gift Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        img {
+            max-width: 100px;
+        }
+        h1 {
+            color: #333;
+        }
+        .countdown {
+            font-size: 2em;
+            color: red;
+            margin: 20px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #FF9900;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+        <h1>🎁 Win a $100 Amazon Gift Card!</h1>
+        <p>📱 Only for Switzerland users</p>
+        <div class="countdown" id="countdown">05:00</div>
+        <a class="cta-button" href="https://smrturl.co/a/s674faf4375/12484?s1=" target="_blank">Claim Now</a>
+        <div class="note">⏳ Limited time offer. Act fast!</div>
+    </div>
+    <script>
+        let timeLeft = 300;
+        const countdownEl = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownEl.textContent = 
+                String(minutes).padStart(2, '0') + ":" + 
+                String(seconds).padStart(2, '0');
+            timeLeft--;
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                countdownEl.textContent = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
